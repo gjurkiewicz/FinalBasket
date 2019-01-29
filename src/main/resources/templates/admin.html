@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin site</title>
+
+</head>
+<body>
+<p style="text-align: center; color: #827ffe;"> <a style="color: #403866; text-decoration: none;" th:href="@{/admin/users}">Zobacz liste użytkowników zarejestrowanych</a>.</p>
+<p style="text-align: center; color: black;"><a style="color: salmon; text-decoration: none;" th:href="@{/admin/invoices}">Lista zamówien </a>.</p>
+<div style="text-align: center; color: #403866" th:text="${success}"></div>
+<div style="width: 100%; margin: 0 auto;">
+    <div style="width: 100%; min-height: 50vh; display: -webkit-box; display: -webkit-flex;  display: -moz-box; display: -ms-flexbox; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 15px; background-size: cover; background: no-repeat center;">
+        <div style="width: 390px; border-radius: 5px; position: relative; padding-top: 10px; padding-bottom: 20px; border: 3px solid ghostwhite; background-color: ghostwhite;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                        <form th:action="@{/admin/add}" method="post">
+                            <span style="color: #403866; line-height: 2.5; text-align: center; width: 100%; display: block; padding-top: 20px;">
+                                <h1 class="fas fa-spinner"></h1>
+                            </span>
+
+                            <div style="width: 100%; position: relative; margin-top: 35px; background-color: #e6e6e6; border-radius: 3px; margin-bottom: 16px;">
+                                <input class="i100" id="id_product" type="text" name="name" placeholder="Name" pattern=".{4,}" title="Four or more characters">
+                                <span class="focus-i100"></span>
+                            </div>
+
+                            <div style="width: 100%; position: relative; margin-top: 25px; background-color: #e6e6e6; border-radius: 3px; margin-bottom: 16px;">
+                                <input class="i100" type="text" name="price" placeholder="Price">
+                                <span class="focus-i100"></span>
+                            </div>
+
+                            <div style="display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; justify-content: space-between; -ms-align-items: center; align-items: center; width: 100%; padding-top: 3px; padding-bottom: 24px;">
+                                <div>
+                                    <a th:href="@{/logout}"
+                                       style="font-size: 12px; color: #ff253a; line-height: 1.4;">
+                                        Logout
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div style="width: 100%; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; flex-wrap: wrap; margin-top: 17px;">
+                                <button type="submit" class="login1-btn" value="Sign In">
+                                   Dodaj kolejny produkt
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

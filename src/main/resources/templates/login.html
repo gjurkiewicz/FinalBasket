@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Login Page</title>
+
+</head>
+
+
+<body>
+<div style="width: 100%; margin: 0 auto;">
+    <div style="width: 100%; min-height: 50vh; display: -webkit-box; display: -webkit-flex;  display: -moz-box; display: -ms-flexbox; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 15px; background-size: cover; background: no-repeat center;">
+        <div style="width: 390px; background: #fff; border-radius: 10px; position: relative; padding-top: 50px; padding-bottom: 90px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                        <div style="color: #ff253a" th:if="${param.error}">
+                            Invalid username and password.
+                        </div>
+                        <div style="color: #403866" th:if="${param.logout}">
+                            You have been logged out.
+                        </div>
+                        <div style="color: #403866" th:if="${param.add}">
+                            You have been successfully registered.
+                        </div>
+                        <div style="color: #403866" th:text="${success}"></div>
+                        <form th:action="@{/login}" method="post">
+                            <span class="far fa-address-book" style="font-size: 30px; color: #403866; line-height: 2.5; text-transform: uppercase; text-align: center; width: 100%; display: block; padding-top: 50px;">
+                                Login
+                            </span>
+
+                            <div style="width: 100%; position: relative; margin-top: 25px; background-color: #e6e6e6; border-radius: 3px; margin-bottom: 16px;">
+                                <input class="i100" id="id_e" type="text" name="email" placeholder="Email">
+                                <span class="focus-i100"></span>
+                            </div>
+
+                            <div style="width: 100%; position: relative; margin-top: 25px; background-color: #e6e6e6; border-radius: 3px; margin-bottom: 16px;">
+                                <input class="i100" type="password" name="password" placeholder="Password">
+                                <span class="focus-i100"></span>
+                            </div>
+
+                            <div style="display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; justify-content: space-between; -ms-align-items: center; align-items: center; width: 100%; padding-top: 3px; padding-bottom: 24px;">
+                                <div>
+                                    <a th:href="@{/register}"
+                                       style="font-size: 16px; color: #827ffe; line-height: 1.4;">
+                                        Register?
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div style="width: 100%; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; flex-wrap: wrap; margin-top: 17px;">
+                                <button type="submit" class="login1-btn" value="Sign In">
+                                    Login
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

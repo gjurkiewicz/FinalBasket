@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Register Page</title>
+
+</head>
+<body>
+
+
+<div style="width: 100%; margin: 0 auto;">
+
+    <div style="width: 100%; min-height: 50vh; display: -webkit-box; display: -webkit-flex;  display: -moz-box; display: -ms-flexbox; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 15px; background-size: cover; background: no-repeat center;">
+        <div style="width: 390px; background: #fff; border-radius: 10px; position: relative; padding-top: 0px; padding-bottom: 90px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                        <form th:action="@{/register}" th:object="${user}" method="post" role="form">
+                            <span class="far fa-user"
+                                  style="font-size: 30px; color: #403866; line-height: 2.5; text-transform: uppercase; text-align: center; width: 100%; display: block; padding-top: 50px;">
+                                Register
+                            </span>
+                            <div style="text-align: center; color: #403866" th:text="${successMessage}"></div>
+
+                            <div style="width: 100%; position: relative; margin-top: 25px; background-color: #e6e6e6; border-radius: 3px; margin-bottom: 16px;">
+                                <input class="i100" type="text" th:name="name" placeholder="Name" pattern=".{2,}" required>
+                                <span class="focus-i100"></span>
+                            </div>
+                            <div style="width: 100%; position: relative; margin-top: 25px; background-color: #e6e6e6; border-radius: 3px; margin-bottom: 16px;">
+                                <input class="i100" type="text" th:name="lastName" placeholder="Surname" pattern=".{2,}" required>
+                                <span class="focus-i100"></span>
+                            </div>
+                            <div style="width: 100%; position: relative; margin-top: 25px; background-color: #e6e6e6; border-radius: 3px; margin-bottom: 16px;">
+                                <input class="i100" type="text" th:name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                                <span class="focus-i100"></span>
+                            </div>
+                            <div style="width: 100%; position: relative; margin-top: 25px; background-color: #e6e6e6; border-radius: 3px; margin-bottom: 16px;">
+                                <input class="i100" type="password" th:name="password" placeholder="Password" pattern=".{6,}" required>
+                                <span class="focus-i100"></span>
+                            </div>
+
+                            <div style="display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; justify-content: space-between; -ms-align-items: center; align-items: center; width: 100%; padding-top: 3px; padding-bottom: 24px;">
+                                <div>
+                                    <a th:href="@{/login}"
+                                       style="font-size: 16px; color: #827ffe; line-height: 1.4;">
+                                        Back
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div style="width: 100%; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; flex-wrap: wrap; margin-top: 17px;">
+                                <button type="submit" class="login1-btn" value="Sign In">
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
