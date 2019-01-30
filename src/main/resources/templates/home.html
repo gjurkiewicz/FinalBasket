@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="../static/home.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+
+
+
+    </div>
+</nav>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Final Basket</h1>
+
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-3">
+
+
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div style="text-align: left; color: #403866" th:each="product : ${products}">
+
+                    <div class="card">
+                        <img class="card-img-top" src="/static/skok.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title"><a th:name="name" title="Product" th:text="${product.name}"></a></h4>
+                            <p class="card-text">Content</p>
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#" class="btn btn-danger btn-block"  th:text="${product.price}"> "$" >Product Price</a>
+                                </div>
+                                <div class="col">
+                                    <form th:action="@{/home}" th:object="${product}" method="post" role="form">
+                                    <a href="#" class="btn btn-success btn-block">Add to Order</a>
+                                    </form></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+
+                <div class="col-12">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="text-light">
+    <div class="container">
+
+        <div class="col-md-4 col-lg-3 col-xl-3">
+            <h5>Contact</h5>
+            <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+            <ul class="list-unstyled">
+                <li><i class="fa fa-home mr-2"></i> My company</li>
+                <li><i class="fa fa-envelope mr-2"></i> g_jurkiewicz@wp.pl</li>
+                <li><i class="fa fa-phone mr-2"></i> 791 119 185</li>
+
+            </ul>
+        </div>
+        <div class="col-12 copyright mt-3">
+            <p class="float-left">
+                <a href="#">Back to top</a>
+            </p>
+        </div>
+    </div>
+
+</footer>
+</div>
+</body>
+</html>
